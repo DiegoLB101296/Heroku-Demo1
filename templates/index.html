@@ -1,0 +1,81 @@
+<html>
+
+<title>Iris Prediction</title>
+
+<style>
+    body {
+        background-color: rgb(73,123,189);
+    }
+
+    .login {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        margin: -150px 0 0 -150px;
+        width: 400px;
+        height: 400px;
+    }
+
+    button{
+        color: rgb(255, 255, 255);
+        background-color: rgb(250, 178, 24);
+        font-size: 18px;
+        width: 250px;
+        height: 40px;
+        padding: 7px 10px;
+        border-radius: 15px;
+        border: 2px solid black;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+    }
+
+    button:hover{
+        background-color: rgb(250, 178, 24);
+        color: black;
+        cursor: pointer;
+    }
+
+    h1 {
+        color: white;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-style: oblique;
+        font-size: 50px;
+        margin-top: 3%;
+    }
+
+    input {
+        width: 75%;
+        height: 5%;
+        padding: 10px 10px;
+        font-size: 18px;
+    }
+
+    h3 {
+        color: whitesmoke;
+        font-size: 30px;
+        margin-top: 90px;
+    }
+</style>
+
+<body>
+    <h1> IRIS PREDICTION</h1>
+<div class="login">
+    <div>
+        <form method="post" action="{{url_for('predict')}}">
+            <br></br>
+            <input type="text" name="Sepal Length" placeholder="Sepal Length" required="required"/>
+            <br></br>
+            <input type="text" name="Sepal Width" placeholder="Sepal Width" required="required"/>
+            <br></br>
+            <input type="text" name="Petal Length" placeholder="Petal Length" required="required"/>
+            <br></br>
+            <input type="text" name="Petal Width" placeholder="Petal Width" required="required"/>
+            <br></br>
+            <button type="submit">Predict your Iris</button>
+        </form>
+        <h3>{{prediction_text}}</h3>
+    </div>
+</div>
+</body>
+</html>
